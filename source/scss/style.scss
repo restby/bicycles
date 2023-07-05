@@ -1,7 +1,8 @@
-/* GLOBAL */
-@import "global/fonts";
+// GLOBAL
+@import "fonts";
+@import "global/mixins";
 @import "global/variables";
 @import "global/global";
 
-/* BLOCKS */
+// FONTS
 @import "blocks/header";
