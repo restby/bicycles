@@ -17,7 +17,7 @@ export const html = () => {
     //   //Показывать в терминале какой файл обработан
     //   verbose: true
     // }))
-    .pipe(app.plugins.replace(/@img\//g, 'images/'))
+    .pipe(app.plugins.replace(/@img\//g, 'img/'))
     .pipe(
       app.plugins.if(
         app.isBuild, webpHtmlNosvg()

@@ -1,5 +1,5 @@
 import webp from "gulp-webp";
-import imagemin from "gulp-imagemin";
+import imagemin, { gifsicle, mozjpeg, optipng, svgo } from "gulp-imagemin";
 
 
 export const images = () => {
@@ -11,30 +11,32 @@ export const images = () => {
       })))
     .pipe(app.plugins.newer(app.path.build.images))
     .pipe(
-      app.plugins.if(
-        app.isBuild, webp()
-      )
+      webp()
     )
     .pipe(
-      app.plugins.if(
-        app.isBuild, app.gulp.dest(app.path.build.images))
+      app.gulp.dest(app.path.build.images)
     )
     .pipe(
-      app.plugins.if(
-        app.isBuild, app.gulp.src(app.path.src.images))
+      app.gulp.src(app.path.src.images)
     )
     .pipe(
-      app.plugins.if(
-        app.isBuild, app.plugins.newer(app.path.build.images))
+      app.plugins.newer(app.path.build.images)
     )
     .pipe(
-      app.plugins.if(
-        app.isBuild, imagemin({
-          progressive: true,
-          svgoPlugins: [{ removeViebox: false }],
-          interlaced: true,
-          optimizationLevel: 3
-        })
+      imagemin(
+        [
+          gifsicle({ interlaced: true }),
+          mozjpeg({ quality: 75, progressive: true }),
+          optipng({ optimizationLevel: 3 }),
+          svgo({
+            plugins: [
+              {
+                name: 'removeViewBox',
+                active: false
+              }
+            ]
+          })
+        ]
       )
     )
     .pipe(app.gulp.dest(app.path.build.images))

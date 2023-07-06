@@ -2,13 +2,17 @@
 <html lang="en" class="page">
 
   @@include('html/head.html', {
-  "title": "Главная"})
+  "title": "Велосипеды"})
 
   <body>
     @@include('html/header.html', {})
-    <main> index
-      <span>ghbdtn!!</span>
-      <img width="150" height="150" src="@img/1.jpg" alt="1">
+    <main>
+      @@include('html/hero.html', {})
+      @@include('html/about.html', {})
+      @@include('html/preview.html', {})
+      @@include('html/media.html', {})
+      <img width="150" height="150" src="@img/preview-1-mobile.jpg" alt="1">
+      <img width="150" height="150" src="@img/map-mobile.png" alt="1">
 
     </main>
     @@include('html/footer.html', {})
