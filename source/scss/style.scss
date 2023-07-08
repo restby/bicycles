@@ -4,5 +4,18 @@
 @import "global/variables";
 @import "global/global";
 
-// FONTS
+// GLOBAL-BLOCKS
+@import "blocks/container";
+@import "blocks/section-title";
+
+// BLOCKS
 @import "blocks/page-header";
+@import "blocks/logo";
+@import "blocks/nav";
+@import "blocks/hero";
+@import "blocks/about";
+@import "blocks/preview";
+@import "blocks/media";
+@import "blocks/page-footer";
+@import "blocks/contacts";
+@import "blocks/map";
