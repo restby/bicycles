@@ -48,12 +48,12 @@ function watcher() {
   gulp.watch(path.watch.js, js);// вместо js заменить на gulp.series(js,ftp)
   gulp.watch(path.watch.images, images);// вместо images заменить на gulp.series(images,ftp)
 }
-export { svgSprive }
+// export { svgSprive }
 
 //Последовательная обработка шрифтов
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle)
 //Основные задачи
-const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
+const mainTasks = gulp.series(fonts, svgSprive, gulp.parallel(copy, html, scss, js, images));
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);

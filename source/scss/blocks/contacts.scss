@@ -1,0 +1,111 @@
+.contacts__title {
+  margin-bottom: 20px;
+
+  @media (min-width: 1440px) {
+    margin-bottom: 30px;
+  }
+}
+
+.contacts__text {
+  margin: 0;
+  margin-bottom: 25px;
+  color: rgba(var(--base-black), 0.70);
+  text-align: center;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 31px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 42px;
+  }
+}
+
+.contacts__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: end;
+    justify-content: center;
+  }
+}
+
+.contacts__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--base-black);
+  opacity: 0.5;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-decoration: none;
+
+  &--email {
+    margin-bottom: 22px;
+
+    @media (min-width: 768px) {
+      margin-right: 90px;
+      margin-bottom: 0;
+    }
+  }
+
+  &--tel {
+    line-height: normal;
+  }
+
+  &:not(.contacts__link--disabled):focus,
+  &:not(.contacts__link--disabled):hover {
+    color: var(--base-primary);
+    opacity: 0.7;
+  }
+
+  &:not(.contacts__link--disabled):focus .contacts__icon--email,
+  &:not(.contacts__link--disabled):hover .contacts__icon--email {
+    color: var(--base-primary);
+    opacity: 0.7;
+  }
+
+  &:not(.contacts__link--disabled):focus .contacts__icon--tel,
+  &:not(.contacts__link--disabled):hover .contacts__icon--tel {
+    stroke: var(--base-primary);
+    opacity: 0.7;
+  }
+
+  &:not(.contacts__link--disabled):active {
+    color: var(--base-primary);
+    opacity: 1;
+  }
+
+  &:not(.contacts__link--disabled):active .contacts__icon--email {
+    color: var(--base-primary);
+    opacity: 1;
+  }
+
+  &:not(.contacts__link--disabled):active .contacts__icon--tel {
+    stroke: var(--base-primary);
+    opacity: 1;
+  }
+}
+
+.contacts__icon {
+  &--email {
+    color: var(--base-black);
+    opacity: 0.5;
+    margin-right: 15px;
+  }
+
+  &--tel {
+    stroke: var(--base-black);
+    opacity: 0.5;
+    color: var(--base-white);
+    margin-right: 16px;
+  }
+}

@@ -3,8 +3,8 @@
     "scope": "html",
     "prefix": "g-use",
     "body": [
-      "<svg class=\"\">",
-      "  <use xlink:href=\"img/icons/stack.svg#$2\"></use>",
+      "<svg class=\"$2\" aria-hidden=\"true\" focusable=\"false\" fill=\"currentColor\" width=\"$3\" height=\"$4\">",
+      "  <use xlink:href=\"img/icons/icons.svg#$1\"></use>",
       "</svg>"
     ],
     "description": "Snippet for use svg sprites"

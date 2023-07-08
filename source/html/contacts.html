@@ -2,6 +2,17 @@
   <h2 class="contacts__title section-title">Как нас найти?</h2>
   <p class="contacts__text">Мы находимся по адресу: Санкт-Петербург, ул. Большая Конюшенная, д. 19</p>
   @@include('map.html', {})
-  <a class="contacts__link" href="mailto:puteshestviemechta@gmail.ru">puteshestviemechta@gmail.ru</a>
-  <a class="contacts__link" href="tel:+749978468446">+7 (499) -784-684-46</a>
+  <div class="contacts__wrapper">
+    <a class="contacts__link contacts__link--email" href="mailto:puteshestviemechta@gmail.ru">
+      <svg class="contacts__icon contacts__icon--email" aria-hidden="true" focusable="false" fill="currentColor"
+        width="26" height="20">
+        <use xlink:href="img/icons/icons.svg#icon-email"></use>
+      </svg>
+      <span>puteshestviemechta@gmail.ru</span></a>
+    <a class="contacts__link contacts__link--tel" href="tel:+749978468446"><svg
+        class="contacts__icon contacts__icon--tel" aria-hidden="true" focusable="false" fill="currentColor" width="22"
+        height="27">
+        <use xlink:href="img/icons/icons.svg#icon-phone"></use>
+      </svg><span>+7 (499) -784-684-46</span></a>
+  </div>
 </section>
