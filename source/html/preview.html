@@ -14,11 +14,25 @@
         <p class="preview__item-descr">Дорожный велосипед</p>
       </li>
       <li class="preview__item">
-
+        <picture>
+          <source type="image/webp" media="(min-width: 1440px)"
+            srcset="@img/preview-2-desktop.webp 1x, @img/preview-2-desktop@2x.webp 2x">
+          <source type="image/webp" srcset="@img/preview-2-mobile.webp 1x, @img/preview-2-mobile@2x.webp 2x">
+          <source media="(min-width: 1440px)" srcset="@img/preview-2-desktop.jpg 1x, @img/preview-2-desktop@2x.jpg 2x">
+          <img class="image" loading="lazy" src="@img/preview-2-mobile.jpg" width="270" height="300"
+            srcset="@img/preview-2-mobile.jpg @2x" alt="Горный велосипед.">
+        </picture>
         <p class="preview__item-descr">Горный велосипед</p>
       </li>
       <li class="preview__item">
-
+        <picture>
+          <source type="image/webp" media="(min-width: 1440px)"
+            srcset="@img/preview-3-desktop.webp 1x, @img/preview-3-desktop@2x.webp 2x">
+          <source type="image/webp" srcset="@img/preview-3-mobile.webp 1x, @img/preview-3-mobile@2x.webp 2x">
+          <source media="(min-width: 1440px)" srcset="@img/preview-3-desktop.jpg 1x, @img/preview-3-desktop@2x.jpg 2x">
+          <img class="image" loading="lazy" src="@img/preview-3-mobile.jpg" width="270" height="300"
+            srcset="@img/preview-3-mobile.jpg @2x" alt="Детский велосипед.">
+        </picture>
         <p class="preview__item-descr">Детский велосипед</p>
       </li>
     </ul>
