@@ -13,6 +13,7 @@ export const path = {
     images: `${buildFolder}/img/`,
     fonts: `${buildFolder}/fonts/`,
     files: `${buildFolder}/files/`,
+    favicons: `${buildFolder}/favicons/`,
     lint: `${buildFolder}/**/*.html`,
   },
   src: {
@@ -24,6 +25,7 @@ export const path = {
     svg: `${srcFolder}/img/svg/**/*.svg`,
     svgicons: `${srcFolder}/img/icons/*.svg`,
     files: `${srcFolder}/files/**/*.*`,
+    favicons: `${srcFolder}/favicons/**/*.*`,
     lint: `${srcFolder}/**/*.html`,
   },
   watch: {

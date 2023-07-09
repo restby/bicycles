@@ -16,6 +16,7 @@ global.app = {
 
 // Импорт задач
 import { copy } from "./gulp/tasks/copy.js";
+import { favicons } from "./gulp/tasks/favicons.js";
 import { reset } from "./gulp/tasks/reset.js";
 import { html } from "./gulp/tasks/html.js";
 import { server } from "./gulp/tasks/server.js";
@@ -53,7 +54,7 @@ function watcher() {
 //Последовательная обработка шрифтов
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle)
 //Основные задачи
-const mainTasks = gulp.series(fonts, svgSprive, gulp.parallel(copy, html, scss, js, images));
+const mainTasks = gulp.series(fonts, svgSprive, gulp.parallel(copy, favicons, html, scss, js, images));
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
