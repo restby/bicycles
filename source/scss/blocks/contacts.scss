@@ -25,6 +25,18 @@
 }
 
 .contacts__wrapper {
+  margin-bottom: 33px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: 1440px) {
+    margin-bottom: 38px;
+  }
+}
+
+.contacts__inner {
   display: flex;
   flex-direction: column;
   align-items: center;

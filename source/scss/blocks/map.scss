@@ -1,0 +1,39 @@
+.map__container {
+  width: 100%;
+  height: 250px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    width: 698px;
+    height: 545px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 957px;
+    height: 530px;
+  }
+
+  &--no-js {
+    display: none;
+  }
+}
+
+.map__image {
+  width: 100%;
+  height: 250px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    width: 698px;
+    height: 545px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 957px;
+    height: 530px;
+  }
+
+  &--hide {
+    display: none;
+  }
+}
