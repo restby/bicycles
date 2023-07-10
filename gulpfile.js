@@ -20,7 +20,7 @@ import { favicons } from "./gulp/tasks/favicons.js";
 import { reset } from "./gulp/tasks/reset.js";
 import { html } from "./gulp/tasks/html.js";
 import { server } from "./gulp/tasks/server.js";
-import { scss } from "./gulp/tasks/scss.js";
+import { scss, style } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
 import { images } from "./gulp/tasks/images.js";
 import { otfToTtf, ttfToWoff, fontsStyle } from "./gulp/tasks/fonts.js";
@@ -45,7 +45,7 @@ export function validateMarkup() {
 function watcher() {
   gulp.watch(path.watch.files, copy);//gulp.series(html,ftp)
   gulp.watch(path.watch.html, html);// вместо html заменить на gulp.series(html,ftp)
-  gulp.watch(path.watch.scss, scss);// вместо scss заменить на gulp.series(scss,ftp)
+  gulp.watch(path.watch.scss, style);// вместо style заменить на gulp.series(style,ftp)
   gulp.watch(path.watch.js, js);// вместо js заменить на gulp.series(js,ftp)
   gulp.watch(path.watch.images, images);// вместо images заменить на gulp.series(images,ftp)
 }
@@ -54,7 +54,7 @@ function watcher() {
 //Последовательная обработка шрифтов
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle)
 //Основные задачи
-const mainTasks = gulp.series(fonts, svgSprive, gulp.parallel(copy, favicons, html, scss, js, images));
+const mainTasks = gulp.series(fonts, svgSprive, gulp.parallel(copy, favicons, html, gulp.series(scss, style), js, images));
 // Построение сценариев выполнения задач
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
